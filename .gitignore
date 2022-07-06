@@ -30,3 +30,6 @@
 
 # broccoli-debug
 /DEBUG/
+
+#config
+/config/auth0-config.js

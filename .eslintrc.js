@@ -41,6 +41,9 @@ module.exports = {
         browser: false,
         node: true,
       },
+      globals: {
+        auth0: false,
+      },
       plugins: ['node'],
       extends: ['plugin:node/recommended'],
       rules: {

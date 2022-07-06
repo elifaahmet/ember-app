@@ -1,0 +1,12 @@
+{{#if this.getUserName}}
+  <div data-test-id="user-info">
+    <h1 class="title is-size-1">
+      User Info
+    </h1>
+    <h2 class="subtitle is-size-3">
+      {{this.getUserName}}
+    </h2>
+  </div>
+{{else}}
+  <p>Please login from <a href="app.uplisting.io" target="_blank" rel="noopener noreferrer">app.uplisting.io</a> </p>
+{{/if}}
