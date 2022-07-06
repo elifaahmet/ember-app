@@ -3,6 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import Evented from '@ember/object/evented';
 
+// QUESTION: what is this service doing?
 export default class CookieValueService extends Service.extend(Evented) {
   @service router;
   @tracked token = `; ${document.cookie}`
@@ -34,6 +35,7 @@ export default class CookieValueService extends Service.extend(Evented) {
       };
     })();
 
+    // QUESTION: why does this have to run later?
     window.setInterval(checkCookie, 100);
   }
 }

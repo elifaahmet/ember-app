@@ -19,6 +19,8 @@ const parseJwt = (token) => {
 export default function () {
   this.namespace = 'api';
 
+  // QUESTION: We could also add GET /users/you to respond with a 404 for a user not found
+  // that we could thne use in a test scenario?
   this.get('/users/me', (schema, request) => {
     let jwtToken;
     try {
@@ -26,6 +28,8 @@ export default function () {
     } catch (error) {
       return new Response(401, {}, { message: 'Bad authorization header' });
     }
+    // QUESTION: I think we can just assume this finds the first user in the schema rather than parsing the token
+    // not sure why we need to parse the token here?
     const user = schema.db.users.findBy(parseJwt(jwtToken));
     return {
       data: {

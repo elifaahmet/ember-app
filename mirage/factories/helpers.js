@@ -6,6 +6,7 @@ export const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+// QUESTION: perhaps use Faker or similiar here to avoid hardcoding lost of test fixtures?
 export const generateName = () => {
   const name1 = [
     'abandoned',
